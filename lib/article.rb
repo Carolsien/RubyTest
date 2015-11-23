@@ -10,4 +10,14 @@ class Article
     @date = date
     @date = Date.new if date.nil?
   end
+
+  def to_json
+    {
+      id: id,
+      title: title,
+      content: content,
+      author: author,
+      date: date  
+    }
+  end
 end

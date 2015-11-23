@@ -29,6 +29,6 @@ class ArticleRepository
   end
 
   def save_articles(articles)
-
+    
   end
 end
