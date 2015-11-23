@@ -1,3 +1,5 @@
+require "json"
+
 class User
   attr_accessor :id, :login, :password
 
