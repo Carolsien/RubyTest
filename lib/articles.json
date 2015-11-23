@@ -1,5 +1,11 @@
 {
   "articles": [
-
+    {
+      "id": 0,
+      "title": "test",
+      "content": "test",
+      "author": "asd",
+      "date": ""
+    }
   ]
 }

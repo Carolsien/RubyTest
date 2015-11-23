@@ -3,11 +3,13 @@ class UserRepository
     parsed_users
   end
 
+  private
+
   def parsed_users
     f = File.read("users.json")
     p = JSON.parse(f)
     p["users"].each_with_object([]) do |user, users|
-      users << User.new(user["id"], user["login"], user["password"])
+      users << User.new(id: user["id"], login: user["login"], password: user["password"])
     end
   end
 end

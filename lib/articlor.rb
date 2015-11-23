@@ -7,7 +7,7 @@ require "./article_repository.rb"
 require "json"
 require "pry"
 
-#binding.pry
+binding.pry
 current_user = nil
 until current_user.class == User
   puts "Podaj login: "

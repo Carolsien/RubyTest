@@ -1,10 +1,13 @@
 class Article
-  attr_accessor :title, :author, :content, :date
+  attr_accessor :id, :title, :author, :content, :date
 
-  def initialize(title, author, content)
+  def initialize(id: nil, date: nil, title:, content:, author:)
+    @id = id
+    @id = ArticleHelper.get_id if id.nil?
     @title = title
-    @author = author
     @content = content
-    @date = Date.new    
+    @author = author
+    @date = date
+    @date = Date.new if date.nil?
   end
 end
