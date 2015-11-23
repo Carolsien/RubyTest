@@ -8,16 +8,17 @@ class Article
     @content = content
     @author = author
     @date = date
-    @date = Date.new if date.nil?
+    @date = Time.new if date.nil?
   end
 
-  def to_json
-    {
+  def to_json(options = {})
+    u = {
       id: id,
       title: title,
       content: content,
       author: author,
-      date: date  
+      date: date
     }
+    JSON.pretty_generate(u, options)
   end
 end

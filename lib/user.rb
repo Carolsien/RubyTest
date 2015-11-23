@@ -7,4 +7,13 @@ class User
     @login = login
     @password = password
   end
+
+  def to_json(options = {})
+    u = {
+      id: id,
+      login: login,
+      password: password
+    }
+    JSON.pretty_generate(u, options)
+  end
 end
