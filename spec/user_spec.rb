@@ -34,12 +34,10 @@ describe User do
     context "id not given" do
       before do
         allow(UserHelper).to receive(:get_id).and_return(0)
-
-        #require 'pry'; binding.pry
-        subject { User.new(login: "ik", password: "ooo") }
       end
       it "sets id dynamically if not given in params" do
-        expect(subject.id).to eq(1)
+        user1 =  User.new(login: "ik", password: "ooo")
+        expect(user1.id).to eq(0)
       end
     end
   end

@@ -1,10 +1,12 @@
 class ArticleRepository
+ attr_accessor :parsed_articles
+
   def all
     parsed_articles
   end
 
   def find_by_id(id)
-    all_articles = ArticleRepository.new.all
+    all_articles = parsed_articles
     all_articles.each do |article|
       if article.id == id
         return article
@@ -46,7 +48,7 @@ class ArticleRepository
   def parsed_articles
     f = File.read("articles.json")
     p = JSON.parse(f)
-    p["articles"].each_with_object([]) do |article, articles|
+    @parsed_articles = p["articles"].each_with_object([]) do |article, articles|
       articles << Article.new(id: article["id"], date: article["date"], title: article["title"], content: article["content"], author: article["author"])
     end
   end
@@ -58,5 +60,6 @@ class ArticleRepository
     File.open("articles.json", 'w') do |f|
       f.write articles_json
     end
+    true
   end
 end
