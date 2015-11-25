@@ -26,14 +26,11 @@ describe Authenticator do
   let(:user_repo) { double("UserRepository") }
 
   describe "#auth" do
-    context "with correct credentials" do
-      before do
-        require pry;     binding.pry
-        allow(File).to receive(:read).and_return(file)
-        allow(user_repo).to receive(:all).and_return(users)
-      end
-      it "returns user object"
-        expect(described_class.auth("login", "password")).to be_a_kind_of(User)
+    before do
+      allow(File).to receive(:read).and_return(file)
+    end
+    it "returns user object" do
+      expect(described_class.auth("oh", "qwert")).to be_a_kind_of(User)
     end
   end
 end
