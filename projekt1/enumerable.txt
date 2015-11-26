@@ -1,0 +1,21 @@
+#Enumerable
+
+0) all? [{ |obj| block } ] → true or false
+%w[ant bear cat].all? { |word| word.length >= 3 }
+%w[ant bear cat].all? { |word| word.length >= 4 }
+[nil, true, 99].all?    
+
+1) any? [{ |obj| block }] → true or false
+%w[ant bear cat].any? { |word| word.length >= 3 }
+%w[ant bear cat].any? { |word| word.length >= 4 }
+[nil, true, 99].any?    
+                          
+2)collect → an_enumerator
+(1..4).map { |i| i*i }      
+(1..4).collect { "cat"  }    
+
+3)count { |obj| block } → int
+ary = [1, 2, 4, 2]
+ary.count               
+ary.count(2)            
+ary.count{ |x| x%2==0 } 

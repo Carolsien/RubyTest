@@ -1,0 +1,22 @@
+# Arrays
+
+0) Tworzenie tablicy
+array = [1, 2, 3, 4, 5]
+
+1) Elementy w tablicy mogą miec różne typy
+['dziendobry',  1 , false]
+
+2) Dostęp do elementów tablicy
+array[2]
+array.first 
+array[-1]
+array.last 
+
+3) Odwołanie się do 3 kolejnych elementów zaczynając od 2
+array[2, 3]
+
+4) Odwracanie tablicy
+array.reverse!
+
+5) Sprawdzenie czy element jest na liście
+array.include?(1) 

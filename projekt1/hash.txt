@@ -1,0 +1,18 @@
+#Hash
+
+0) Tworzenie
+kolory = {}
+kolory['czerwony'] = 0xff0000
+
+kolory = Hash.new
+kolory['czerwony'] = 0xff0000
+
+2) Hash może mieć wiele wartości:
+kolory = {
+   'czerwony' => 0xff0000,
+   'niebieski' => 0x0000ff
+ } 
+{"czerwony"=>16711680, "niebieski"=>255}
+
+3) Usuwanie
+kolory.delete('czerwony')

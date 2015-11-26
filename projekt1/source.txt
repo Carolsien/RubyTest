@@ -1,0 +1,5 @@
+ŹRÓDŁA:
+
+http://learnxinyminutes.com/docs/ruby/
+http://www.sitepoint.com/guide-ruby-collections-ii-hashes-sets-ranges/
+http://ruby-doc.org/core-2.2.3/Enumerable.html
