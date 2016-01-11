@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
-
+<h1>User <%= @user.login %></h1>
 <p>
   <strong>Login:</strong>
   <%= @user.login %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong>Posts:</strong>
+  <% Post.all.each do |post| %>
+  <tr>
+    <td><% post.title %><%= link_to post.title, post_path %></td>
+  </tr>
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+
 <%= link_to 'Back', users_path %>
