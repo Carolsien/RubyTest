@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Title</th>
       <th>User</th>
       <th colspan="3"></th>
@@ -13,13 +12,17 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% posts = Post.all %>
+    <% posts.each do |post| %>
       <tr>
-        <td><%= post.id %></td>
-        <td><%= post.title %></td>
-        <td><%= post.user.login %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to post.title, post %> </td>
+        <td><%= link_to post.user.login, post.user %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete %></td>
       </tr>
+    <% end %>
+    <% if posts.size == 0 %>
+      <em>No posts found</em>
     <% end %>
   </tbody>
 </table>

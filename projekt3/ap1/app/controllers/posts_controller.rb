@@ -7,9 +7,21 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def get_post
+    @post = Post.find(params[:id])
+  end
+
+  def check_auth
+    if session[:user_id] != @post.user_id
+      flash[:notice] = "sorry, you can't edit this post"
+      redirect_to(posts_path)
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/new
@@ -19,6 +31,11 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
+    if session[:user_id] != @post.user_id
+      flash[:notice] = "sorry, you can't edit this post"
+      redirect_to(posts_path)
+    end
   end
 
   # POST /posts
