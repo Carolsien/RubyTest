@@ -1,3 +1,9 @@
+Autorzy:
+[Karolina Rostek](https://github.com/Carolsien)
+[Pawel Radski](https://github.com/Zwiedzacz)
+[Kamil Soska](https://github.com/ksoska)
+
+
 Prosta aplikacja do tworzenia artykułow.
 Logujemy się jako użytkownik (przykładowy uzytkownik ma login asd i hasło aaa)
 Jeśli podamy błędne dane użytkownika, program prosi nas ponownie o podanie poprawnych.
